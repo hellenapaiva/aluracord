@@ -23,12 +23,12 @@ function Title(props) {
 
 
 export default function PaginaInicial() {
+
     const [username, setUsername] = useState('hellenapaiva');
     const router = useRouter();
 
     return (
         <>
-
             <Box
                 styleSheet={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -99,6 +99,7 @@ export default function PaginaInicial() {
                                 mainColorStrong: appConfig.theme.colors.neutrals[700],
                             }}
                         />
+
                     </Box>
                     {/* Formulário */}
 

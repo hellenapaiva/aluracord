@@ -1,5 +1,6 @@
 import { Box, Text, TextField, Image, Button } from '@skynexui/components';
 import React, { useState } from 'react';
+import { RiSendPlane2Fill } from 'react-icons/ri'
 import appConfig from '../config.json';
 
 export default function ChatPage() {
@@ -90,6 +91,17 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
+                        <RiSendPlane2Fill
+                            size="2em"
+                            styleSheet={{
+                                cursor: 'pointer',
+                            }}
+                            value={mensagem}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleNewMsg(mensagem);
+                            }}
+                        />
                     </Box>
                 </Box>
             </Box>
@@ -116,7 +128,6 @@ function Header() {
 }
 
 function MessageList(props) {
-    console.log('MessageList', props.listMsg);
 
     return (
         <Box
@@ -183,6 +194,7 @@ function MessageList(props) {
 
                             {msg.texto}
                         </Text>
+
                     </Text>
                 )
             })}
